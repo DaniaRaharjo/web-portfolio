@@ -13,7 +13,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route:prefix('admin')->group(function(){
+    Route::prefix('admin')->group(function(){
         Route::post('/projects', [ProjectsController::class, 'store'])->name('projects.store');
         Route::get('/projects/create', [ProjectsController::class, 'create'])->name('projects.create');
         Route::get('/projects/{project:slug}/edit', [ProjectsController::class, 'edit'])->name('projects.edit');
